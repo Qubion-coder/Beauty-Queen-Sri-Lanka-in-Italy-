@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Navbar } from './components/Navbar';
 import { GoldCanvas } from './components/GoldCanvas';
 import { Butterflies } from './components/Butterflies';
@@ -19,10 +19,20 @@ import { Footer } from './components/Footer';
 export default function App() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [hasEnteredSite, setHasEnteredSite] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const startExperience = () => {
+    setIsVideoPlaying(true);
+    if (audioRef.current) {
+      audioRef.current.play().catch(console.error);
+    }
+  };
 
   if (!hasEnteredSite) {
     return (
-      <div className="min-h-screen bg-[#050b18] flex flex-col items-center justify-center relative overflow-hidden">
+      <>
+        <audio ref={audioRef} src="/Miss%20Universe%20Master.wav" loop preload="auto" />
+        <div className="min-h-screen bg-[#050b18] flex flex-col items-center justify-center relative overflow-hidden">
         {/* Intro Background (Optional: can just be black, or re-use gold particles) */}
         <GoldCanvas />
 
@@ -32,6 +42,7 @@ export default function App() {
               src="/invitation-video.mp4"
               autoPlay
               playsInline
+              muted
               onEnded={() => setHasEnteredSite(true)}
               className="w-full h-full object-cover"
             />
@@ -72,7 +83,7 @@ export default function App() {
               </div>
             </div>
             <button
-              onClick={() => setIsVideoPlaying(true)}
+              onClick={startExperience}
               className="px-8 py-4 bg-[#030713]/80 hover:bg-[#d4af37]/90 text-[#fbf0cf] hover:text-black font-cinzel font-bold tracking-widest uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.8)] backdrop-blur-md rounded-sm border border-[#d4af37]/50 hover:border-transparent flex items-center gap-3 group"
             >
               <svg className="w-6 h-6 text-[#d4af37] group-hover:text-black transition-colors" fill="currentColor" viewBox="0 0 24 24">
@@ -83,11 +94,14 @@ export default function App() {
           </div>
         )}
       </div>
+      </>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#030713] text-[#f4efe6] relative overflow-x-hidden selection:bg-[#d4af37]/30 selection:text-[#fae084]">
+    <>
+      <audio ref={audioRef} src="/Miss%20Universe%20Master.wav" loop preload="auto" />
+      <div className="min-h-screen bg-[#030713] text-[#f4efe6] relative overflow-x-hidden selection:bg-[#d4af37]/30 selection:text-[#fae084]">
       {/* Subtle gold particles background */}
       <GoldCanvas />
       
@@ -108,8 +122,8 @@ export default function App() {
         <ContactSection />
       </main>
 
-      {/* Luxurious Dark Navy Footer */}
       <Footer />
     </div>
+    </>
   );
 }
