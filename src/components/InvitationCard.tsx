@@ -3,15 +3,16 @@ import { LotusCrown } from './LotusCrown';
 
 export const InvitationCard: React.FC = () => {
   return (
-    <section id="invitation" className="relative py-24 w-full bg-[#030713]">
+    <section id="invitation" className="relative py-24 w-full bg-[#0a1930]">
       <div className="absolute inset-0 z-0">
         <img
           src="/invitation-bg.png"
           alt="Invitation Background"
           className="w-full h-full object-cover object-center"
         />
-        {/* Optional overlay if needed to darken the bg slightly for text readability */}
-        <div className="absolute inset-0 bg-black/10"></div>
+        {/* Blue color overlay for the background */}
+        <div className="absolute inset-0 bg-[#0d2252]/60 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-blue-950/40"></div>
       </div>
       
       <div className="relative z-10 px-4 sm:px-6 max-w-4xl mx-auto">
@@ -50,7 +51,6 @@ export const InvitationCard: React.FC = () => {
             Join us as extraordinary women compete for the crown and celebrate the spirit of Sri Lanka in Italy.”
           </p>
 
-          {/* Beautiful Gold Highlight for Sinhala Statement */}
           <div className="pt-6 pb-2">
             <div className="inline-block px-8 py-4 rounded-2xl bg-gradient-to-r from-[#07132e] via-[#0d2252] to-[#07132e] border border-[#d4af37]/60 shadow-[0_0_25px_rgba(212,175,55,0.2)]">
               <span className="font-sinhala text-xl sm:text-3xl md:text-4xl text-gold-bright font-bold tracking-wide block">

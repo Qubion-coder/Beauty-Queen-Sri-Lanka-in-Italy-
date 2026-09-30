@@ -6,11 +6,12 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { GoldCanvas } from './components/GoldCanvas';
+import { Butterflies } from './components/Butterflies';
 import { Hero } from './components/Hero';
 import { InvitationCard } from './components/InvitationCard';
 import { EventDetailsCards } from './components/EventDetailsCards';
 import { AboutSection } from './components/AboutSection';
-import { GallerySection } from './components/GallerySection';
+import { CelebritiesSection } from './components/CelebritiesSection';
 import { EventExperience } from './components/EventExperience';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -21,12 +22,12 @@ export default function App() {
 
   if (!hasEnteredSite) {
     return (
-      <div className="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden">
+      <div className="min-h-screen bg-[#050b18] flex flex-col items-center justify-center relative overflow-hidden">
         {/* Intro Background (Optional: can just be black, or re-use gold particles) */}
         <GoldCanvas />
 
         {isVideoPlaying ? (
-          <div className="absolute inset-0 z-50 bg-black flex items-center justify-center">
+          <div className="absolute inset-0 z-50 bg-[#050b18] flex items-center justify-center">
             <video
               src="/invitation-video.mp4"
               autoPlay
@@ -36,11 +37,12 @@ export default function App() {
             />
             <button 
               onClick={() => setHasEnteredSite(true)}
-              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-[60] bg-black/50 p-2 rounded-full"
+              className="absolute bottom-8 right-8 text-white/70 hover:text-[#d4af37] transition-colors z-[60] bg-black/60 hover:bg-black/80 px-6 py-3 rounded-full flex items-center gap-2 font-cinzel font-semibold tracking-wider text-sm sm:text-base border border-transparent hover:border-[#d4af37]/50 backdrop-blur-sm"
               aria-label="Skip Video"
             >
-              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              SKIP INTRO
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
               </svg>
             </button>
           </div>
@@ -88,6 +90,9 @@ export default function App() {
     <div className="min-h-screen bg-[#030713] text-[#f4efe6] relative overflow-x-hidden selection:bg-[#d4af37]/30 selection:text-[#fae084]">
       {/* Subtle gold particles background */}
       <GoldCanvas />
+      
+      {/* Elegant flying butterflies */}
+      <Butterflies />
 
       {/* Navigation: HOME | ABOUT | EVENT | GALLERY | CONTACT */}
       <Navbar />
@@ -98,7 +103,7 @@ export default function App() {
         <InvitationCard />
         <EventDetailsCards />
         <AboutSection />
-        <GallerySection />
+        <CelebritiesSection />
         <EventExperience />
         <ContactSection />
       </main>

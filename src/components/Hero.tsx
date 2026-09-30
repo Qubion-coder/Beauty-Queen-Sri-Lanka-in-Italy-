@@ -4,7 +4,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative w-full bg-black flex justify-center"
+      className="relative w-full bg-[#050b18] flex justify-center"
     >
       <img
         src="/hero-bg.png"

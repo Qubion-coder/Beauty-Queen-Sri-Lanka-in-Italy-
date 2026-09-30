@@ -1,15 +1,14 @@
 import React from 'react';
 import { LotusCrown } from './LotusCrown';
-import { Sparkles, Heart, Shield, Star, Crown, Globe } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   const elements = [
-    { title: 'Beauty', icon: <Sparkles className="w-5 h-5 text-[#fae084]" /> },
-    { title: 'Confidence', icon: <Star className="w-5 h-5 text-[#fae084]" /> },
-    { title: 'Culture', icon: <LotusCrown size={22} /> },
-    { title: 'Sri Lankan Heritage', icon: <Crown className="w-5 h-5 text-[#fae084]" /> },
-    { title: 'Women’s Empowerment', icon: <Shield className="w-5 h-5 text-[#fae084]" /> },
-    { title: 'Sri Lankan Pride in Italy', icon: <Globe className="w-5 h-5 text-[#fae084]" /> },
+    { title: 'Beauty', icon: <img src="/icon_beauty.jpg" alt="Beauty" className="w-full h-full object-cover rounded-xl" /> },
+    { title: 'Confidence', icon: <img src="/icon_confidence.jpg" alt="Confidence" className="w-full h-full object-cover rounded-xl" /> },
+    { title: 'Culture', icon: <img src="/icon_culture.jpg" alt="Culture" className="w-full h-full object-cover rounded-xl" /> },
+    { title: 'Sri Lankan Heritage', icon: <img src="/icon_heritage.jpg" alt="Heritage" className="w-full h-full object-cover rounded-xl" /> },
+    { title: 'Women’s Empowerment', icon: <img src="/icon_empowerment.jpg" alt="Empowerment" className="w-full h-full object-cover rounded-xl" /> },
+    { title: 'Sri Lankan Pride in Italy', icon: <img src="/icon_pride_italy.jpg" alt="Pride" className="w-full h-full object-cover rounded-xl" /> },
   ];
 
   return (

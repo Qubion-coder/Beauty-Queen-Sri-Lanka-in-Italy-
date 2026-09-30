@@ -1,6 +1,5 @@
 import React from 'react';
 import { LotusCrown } from './LotusCrown';
-import { Instagram, Facebook, Youtube } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -8,6 +7,18 @@ export const Footer: React.FC = () => {
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-6">
         {/* Refined Gold Decorative Crown / Lotus Mark */}
         <LotusCrown size={48} />
+
+        {/* Sinhala Invitation Message */}
+        <div className="max-w-2xl mx-auto space-y-4 px-4 py-6">
+          <p className="font-sinhala text-base sm:text-lg lg:text-xl font-light text-slate-300 text-balance leading-relaxed opacity-90">
+            මව්බිමෙන් දුර බැහැරව වෙසෙන මෙවන් විදේශයකදී ශ්‍රී ලාංකේය සහයෝගිතාවය වෙනුවෙන් අප සමඟ ආදරයෙන් අත්වැල් බැඳගන්නට මෙම ප්‍රභාමය සැදෑවට ඔබගේ පැමිණීම ගෞරවනීය අපේක්ෂා කරමි…!
+          </p>
+          <p className="font-sinhala text-xl sm:text-2xl text-[#d4af37] font-medium pt-2">
+            ඉමායා ලියනගේ
+          </p>
+        </div>
+
+        <div className="w-12 h-px bg-[#d4af37]/30 mb-6" />
 
         {/* Miss & Mrs Beauty Queen Sri Lanka in Italy 2026 */}
         <h2 className="font-cinzel text-lg sm:text-2xl font-bold text-white tracking-[0.18em]">
@@ -19,36 +30,6 @@ export const Footer: React.FC = () => {
           by Imaya Liyanage
         </p>
 
-        {/* Elegant Social Media Icons */}
-        <div className="flex items-center gap-4 pt-2">
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full bg-[#081533] border border-[#d4af37]/35 flex items-center justify-center text-slate-300 hover:text-[#fae084] hover:border-[#fae084] transition-all"
-            aria-label="Instagram"
-          >
-            <Instagram className="w-4 h-4" />
-          </a>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full bg-[#081533] border border-[#d4af37]/35 flex items-center justify-center text-slate-300 hover:text-[#fae084] hover:border-[#fae084] transition-all"
-            aria-label="Facebook"
-          >
-            <Facebook className="w-4 h-4" />
-          </a>
-          <a
-            href="https://www.youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full bg-[#081533] border border-[#d4af37]/35 flex items-center justify-center text-slate-300 hover:text-[#fae084] hover:border-[#fae084] transition-all"
-            aria-label="YouTube"
-          >
-            <Youtube className="w-4 h-4" />
-          </a>
-        </div>
       </div>
     </footer>
   );
