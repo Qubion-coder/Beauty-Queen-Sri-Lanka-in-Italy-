@@ -1,7 +1,11 @@
 import React from 'react';
 import { LotusCrown } from './LotusCrown';
 
-export const InvitationCard: React.FC = () => {
+interface InvitationCardProps {
+  guestName?: string | null;
+}
+
+export const InvitationCard: React.FC<InvitationCardProps> = ({ guestName }) => {
   return (
     <section id="invitation" className="relative py-24 w-full bg-[#0a1930]">
       <div className="absolute inset-0 z-0">

@@ -15,8 +15,19 @@ import { CelebritiesSection } from './components/CelebritiesSection';
 import { EventExperience } from './components/EventExperience';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { Admin } from './components/Admin';
+import { PersonalizedGreeting } from './components/PersonalizedGreeting';
 
 export default function App() {
+  const path = window.location.pathname;
+
+  if (path === '/admin') {
+    return <Admin />;
+  }
+
+  const encodedGuestName = path.length > 1 ? path.substring(1) : null;
+  const guestName = encodedGuestName ? decodeURIComponent(encodedGuestName) : null;
+
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [hasEnteredSite, setHasEnteredSite] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -114,7 +125,8 @@ export default function App() {
       {/* Main Content Sections: strictly only given information */}
       <main className="relative z-10">
         <Hero />
-        <InvitationCard />
+        <PersonalizedGreeting guestName={guestName} />
+        <InvitationCard guestName={guestName} />
         <EventDetailsCards />
         <AboutSection />
         <CelebritiesSection />
