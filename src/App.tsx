@@ -43,12 +43,12 @@ export default function App() {
     return (
       <>
         <audio ref={audioRef} src="/Miss%20Universe%20Master.wav" loop preload="auto" />
-        <div className="min-h-screen bg-[#050b18] flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="min-h-screen bg-gradient-to-b from-[#1a4a8a] via-[#0b2959] to-[#021025] flex flex-col items-center justify-center relative overflow-hidden">
         {/* Intro Background (Optional: can just be black, or re-use gold particles) */}
         <GoldCanvas />
 
         {isVideoPlaying ? (
-          <div className="absolute inset-0 z-50 bg-[#050b18] flex items-center justify-center">
+          <div className="absolute inset-0 z-50 bg-[#0a1930] flex items-center justify-center">
             <video
               src="/invitation-video.mp4"
               autoPlay
