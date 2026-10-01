@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
         {/* Sinhala Invitation Message */}
         <div className="max-w-2xl mx-auto space-y-4 px-4 py-6">
           <p className="font-sinhala text-base sm:text-lg lg:text-xl font-light text-slate-300 text-balance leading-relaxed opacity-90">
-            මව්බිමෙන් දුර බැහැරව වෙසෙන මෙවන් විදේශයකදී ශ්‍රී ලාංකේය සහයෝගිතාවය වෙනුවෙන් අප සමඟ ආදරයෙන් අත්වැල් බැඳගන්නට මෙම ප්‍රභාමය සැදෑවට ඔබගේ පැමිණීම ගෞරවනීය අපේක්ෂා කරමි…!
+            මව්බිමෙන් දුර බැහැරව වෙසෙන මෙවන් විදේශයකදී ශ්‍රී ලාංකේය සහයෝගිතාවය වෙනුවෙන් අප සමඟ ආදරයෙන් අත්වැල් බැඳගන්නට මෙම ප්‍රභාමය සැදෑවට ඔබගේ පැමිණීම ගෞරවනීයව අපේක්ෂා කරමි…!
           </p>
           <p className="font-sinhala text-xl sm:text-2xl text-[#d4af37] font-medium pt-2">
             ඉමායා ලියනගේ
@@ -29,6 +29,21 @@ export const Footer: React.FC = () => {
         <p className="font-script text-2xl sm:text-3xl text-[#fae084] font-normal">
           by Imaya Liyanage
         </p>
+
+        {/* Attribution */}
+        <div className="pt-6">
+          <p className="text-slate-400/80 text-xs font-sans tracking-wider">
+            Want a digital invitation like this? Create yours with{' '}
+            <a 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-[#d4af37] hover:text-white underline transition-colors duration-300" 
+              href="https://wa.me/94707819074"
+            >
+              invitemint
+            </a>
+          </p>
+        </div>
 
       </div>
     </footer>
